@@ -40,14 +40,14 @@ class Airplane {
     //--------------
   }
 
-  onDrawPlane() {
+  drawPlane() {
     // image(ship, this.x, this.y);
-    circle(this.x, this.y, this.rad * 2);
-    line(
-      this.x,
-      this.y,
-      this.x + this.rad * cos(this.dir),
-      this.y + this.rad * sin(this.dir)
-    );
+    push();
+    translate(this.x, this.y);
+    rotate(this.dir+ Math.PI/2);
+    scale(this.rad * 0.003);
+    translate(-this.x, -this.y);
+    image(ship, this.x, this.y);
+    pop();
   }
 }

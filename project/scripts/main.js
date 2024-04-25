@@ -5,22 +5,21 @@ let airplane;
 
 
 function preload() { 
-    // ship = loadImage("../assets/img-materia/nave.jpg");
+    ship = loadImage("../assets/images/nave_2.jpg");
 }
 
 function setup() {
- 
-  createCanvas(400, 400);
-
-  airplane = new Airplane();
+    imageMode(CENTER);
+    airplane = new Airplane();
+    createCanvas(400, 400);
   
   //   Plane.saidHello();
 }
 
 function draw() {
-  background(220);
+  background(255);
   airplane.moveTo();
-  airplane.onDrawPlane();
+  airplane.drawPlane();
 }
 
 function keyPressed() {
@@ -29,19 +28,19 @@ function keyPressed() {
     balas.push(new Bala(x, y, 2.5, dir, 1.5));
   }
   if (keyCode == 37) {
-    izq = true;
+    airplane.izq = true;
   }
   if (keyCode == 38) {
-    ade = true;
+    airplane.ade = true;
   }
   if (keyCode == 39) {
-    der = true;
+    airplane.der = true;
   }
   if (keyCode == 40) {
-    atr = true;
+    airplane.atr = true;
   }
   if (keyCode == 17) {
-    strafe = true;
+    airplane.strafe = true;
   }
 }
 function keyReleased() {
